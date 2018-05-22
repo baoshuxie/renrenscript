@@ -67,7 +67,7 @@ def get_urls(base_user_id,users):
 			
 			break
 
-	print('OK2')
+	#print('OK2')
 
 	if user_ids:
 		print(user_ids[-1])
@@ -76,7 +76,7 @@ def get_urls(base_user_id,users):
 		with open('photos/time.txt','a+',encoding='utf-8') as f:		#记录运行时间和每次保存的最后一个user_id
 			f.write(user_ids[-1]+'\n')
 
-	print(urls)
+	#print(urls)
 
 	browser.quit()
 	return urls
@@ -111,7 +111,7 @@ def get_photo_urls(base_user_id,users):
 			count = album.find_element_by_class_name('album-count').text
 			item={}
 			print(album_url,count)
-			item['url'] = album_urls				
+			item['url'] = album_url				
 			item['count'] = int(count)
 			album_urls.append(item)						#album_urls是dict的list,包含每个相册的url和相册中照片的数量count
 
@@ -132,13 +132,13 @@ def get_photo_urls(base_user_id,users):
 
 	return photo_urls
 
-#创建路径方法
+#创建路径
 def make_dir(path):
 	if not os.path.exists(path):
 		os.mkdir(path)
 	return None
 
-#图片保存到本地的方法
+#图片保存到本地
 def save_photos(urls):
 	date = datetime.now()
 	dir_name = date.strftime('%b %d')
