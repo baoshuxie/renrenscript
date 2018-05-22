@@ -90,8 +90,8 @@ def get_photo_urls(base_user_id,users):
 	browser.get(base_url)
 	browser.find_element_by_id('email').clear()
 	browser.find_element_by_id('password').clear()
-	browser.find_element_by_id('email').send_keys('13689024414')
-	browser.find_element_by_id('password').send_keys('19950708')
+	browser.find_element_by_id('email').send_keys('xxxxxxxxxxxx')       #请输入你自己的手机号
+	browser.find_element_by_id('password').send_keys('xxxxxxx')	#请输入你自己的密码
 	browser.find_element_by_id('login').click()
 	time.sleep(1)
 
